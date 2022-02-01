@@ -331,21 +331,13 @@ def view_submission(ack, body, logger):
 def handle_button_click(ack, body, logger):
     ack()
     user_id = body["user"]["id"]
-    file_name = "./images/heatmap.png"
 
     try:
-      result = app.client.files_upload(
-          channels= user_id,
-          initial_comment="React to this image with a 🔎, and let's make this image easily readible!",
-          file=file_name,
-      )
-
-      try: 
-        image_file = result["file"]["id"]
-        app.client.files_sharedPublicURL(token=os.environ.get("SLACK_USER_TOKEN"), file=image_file)
-      except Exception as e: 
-        logger.error("Error making image file public: {}".format(e))
-
+      app.client.chat_postMessage(
+          channel = user_id,
+          unfurl_links=False,
+          unfurl_media=False,
+          text="Ready to try this out? 🙌\n\nLet's use this *<https://imgur.com/a/JdKRdRa|image with red-green-yellow colors>* and make it colorblind-friendly! \n\n(1) Download and upload that image (or any you want!) here on Slack. \n(2) React to that image with the 🔎 emoji. \n(3) Let the magic happen! \n\nPS, here's a *<https://imgur.com/a/7yUd90d|simulated version of that image under color blindness>* if you're curious! 👀")
     except Exception as e: 
        logger.error(f"Error uploading file: {e}")
 

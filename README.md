@@ -2,6 +2,8 @@
 
 Conveniently generate colorblind-friendly images with automatic alt-text in Slack!
 
+![Easy Image View - Title / Cover](https://cdn.discordapp.com/attachments/931114609434308609/938018111683178496/1.png)
+
 ___
 
 ## Preqrequisites ✔️
