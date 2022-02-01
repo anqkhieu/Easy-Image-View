@@ -23,7 +23,7 @@ ___
 
 3. To download all the Python library dependencies, use `pip install -r requirements.txt` in your terminal. 
 
-4. In a `.env` file, set up your environment variables-- you'll be using your Slack Oauth tokens and Azure key here. 
+4. In a `.env` file, set up your environment variables-- you'll be using your Slack OAuth tokens and Azure key here. 
 
     ```
     SLACK_BOT_TOKEN=xoxb-token-#
